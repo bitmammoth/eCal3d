@@ -97,17 +97,17 @@ public:
 		w =          - qx * v.x - qy * v.y - qz * v.z;
 	}
 
-	inline bool CalQuaternion::operator==(const CalQuaternion &v)
+	inline bool operator==(const CalQuaternion &v)
 	{
 		return ((x == v.x) && (y == v.y) && (z == v.z) && (w == v.w));
 	}
 
-	inline bool CalQuaternion::operator!=(const CalQuaternion &v)
+	inline bool operator!=(const CalQuaternion &v)
 	{
   		return ((x != v.x) || (y != v.y) || (z != v.z) || (w != v.w));
 	}
 	
-	inline void CalQuaternion::operator=(const CalMatrix & m)
+	inline void operator=(const CalMatrix & m)
 	{
   		double T = 1.0 + m.dxdx + m.dydy + m.dzdz;
 		
@@ -192,7 +192,7 @@ public:
 		w = inv_d * w + d * q.w;
 	}
 	
-	inline void CalQuaternion::blendRadians(float rad, const CalQuaternion& q)
+	inline void blendRadians(float rad, const CalQuaternion& q)
 	{
 		// This presumes that both quats are unit quats.
 		if (rad < 0.0) rad = -rad;
